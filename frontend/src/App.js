@@ -7,8 +7,14 @@ import Busca from './components/Busca';
 
 function App() {
   return (
-    <div className="p-d-flex p-jc-center p-ai-center p-flex-column p-p-4" style={{ minHeight: '100vh' }}>
-      <h2 className="p-mb-3">previsão do tempo</h2>
+    <div
+      className="p-d-flex p-ai-center p-flex-column"
+      style={{
+        minHeight: '100vh',
+        paddingLeft: '10px'
+      }}
+    >
+      <h2 className="p-mb-3">Previsão do tempo</h2>
       <Busca />
     </div>
   );
