@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { RadioButton } from 'primereact/radiobutton';
 import axios from 'axios';
+import Exibicao from './Exibicao';
 
 function Busca() {
   const [coordenadas, setCoordenadas] = useState('-23.561167625063238, -46.65648357473211');
@@ -42,8 +43,7 @@ function Busca() {
         onChange={(e) => setCoordenadas(e.target.value.replace(/<[^>]+>/g, ''))}
         placeholder="Latitude, Longitude"
         className="p-inputtext"
-/>
-
+      />
 
       <div className="p-formgroup-inline p-mt-2">
         <div className="p-field-radiobutton">
@@ -54,7 +54,7 @@ function Busca() {
             onChange={(e) => setOpcao(e.value)}
             checked={opcao === 'temp'}
           />
-          <label htmlFor="temp">temperatura</label>
+          <label htmlFor="temp">Temperatura</label>
         </div>
 
         <div className="p-field-radiobutton">
@@ -65,9 +65,11 @@ function Busca() {
             onChange={(e) => setOpcao(e.value)}
             checked={opcao === 'pressao'}
           />
-          <label htmlFor="pressao">pressao e uumidade</label>
+          <label htmlFor="pressao">Pressão e Umidade</label>
         </div>
       </div>
+
+      {previsao && <Exibicao dados={previsao} tipo={opcao} />}
     </div>
   );
 }
