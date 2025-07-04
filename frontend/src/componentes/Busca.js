@@ -39,10 +39,11 @@ function Busca() {
       <input
         type="text"
         value={coordenadas}
-        onChange={(e) => setCoordenadas(e.target.value)}
+        onChange={(e) => setCoordenadas(e.target.value.replace(/<[^>]+>/g, ''))}
         placeholder="Latitude, Longitude"
         className="p-inputtext"
-      />
+/>
+
 
       <div className="p-formgroup-inline p-mt-2">
         <div className="p-field-radiobutton">
